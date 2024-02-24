@@ -36,6 +36,22 @@
         package = pkgs.nix;
       };
 
+      networking = {
+        computerName = "Jorge’s Laptop Pro";
+        hostName = "Jorges-Laptop-Pro";
+        localHostName = "Jorges-Laptop-Pro";
+        knownNetworkServices = [
+          "Wi-Fi"
+          "USB 10/100/1000 LAN"
+        ];
+        dns = [ # Cloudflare DNS
+          "1.1.1.1"
+          "1.0.0.1"
+          "2606:4700:4700::1111"
+          "2606:4700:4700::1001"
+        ];
+      };
+
       environment = {
         systemPackages = with pkgs; [
           # Terminal Utilities
@@ -82,8 +98,6 @@
           vscodium
         ];
 
-        loginShell = "/run/current-system/sw/bin/nu";
-
         variables = {
           EDITOR = "nvim";
           VISUAL = "codium";
@@ -100,17 +114,17 @@
         enable = true;
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
-        casks = [ # lonnp = Linux only on NixPkgs
-          "altserver" # lonnp
+        casks = [
+          "altserver" # Linux only on NixPkgs
           "arc"
-          "arduino-ide" # lonnp
+          "arduino-ide" # Linux only on NixPkgs
           "bartender" # v5 is not available yet on NixPkgs
           "choosy"
           "cleanshot"
-          "clone-hero" # lonnp
-          "cloudflare-warp" # lonnp
+          "clone-hero" # Linux only on NixPkgs
+          "cloudflare-warp" # Linux only on NixPkgs
           "deepl"
-          "firefox" # lonnp
+          "firefox" # Linux only on NixPkgs
           "itsycal"
           "keyboardcleantool"
           "linearmouse"
@@ -124,20 +138,20 @@
           "microsoft-remote-desktop"
           "microsoft-word"
           "mochi-diffusion"
-          "obs" # lonnp
-          "obsidian" # lonnp
+          "obs" # Linux only on NixPkgs
+          "obsidian" # Linux only on NixPkgs
           "prismlauncher" # broken package on NixPkgs, wayland dependency required
           "qlmarkdown"
           "raycast" # regular self-updates means NixPkgs cannot be used
           "rewind"
           "sensei"
-          "sidequest" # lonnp
+          "sidequest" # Linux only on NixPkgs
           "syntax-highlight"
           "tailscale" # package on NixPkgs but app not available
-          "tetrio" # lonnp
+          "tetrio" # Linux only on NixPkgs
           "toontown-rewritten"
           "transmission" # broken package on NixPkgs, no app shortcut generated
-          "ultimaker-cura" # lonnp
+          "ultimaker-cura" # Linux only on NixPkgs
         ];
 
         masApps = {
@@ -176,6 +190,10 @@
           "AdGuard for Safari" = 1440147259;
           "Baking Soda" = 1601151613;
         };
+
+        # non-Homebrew, non-App Store, non-NixPkg apps
+        # Immersed
+        # Sirsi WorkFlows
       };
 
       security = {
@@ -184,18 +202,47 @@
 
       system = {
         defaults = {
-          NSGlobalDomain = { ApplePressAndHoldEnabled = false; };
+          NSGlobalDomain = {
+            AppleICUForce24HourTime = true;
+            AppleInterfaceStyle = "Dark";
+            ApplePressAndHoldEnabled = false;
+            AppleShowAllExtensions = true;
+            AppleShowScrollBars = "Automatic";
+            AppleTemperatureUnit = "Fahrenheit"; # I'm so sorry
+            AppleWindowTabbingMode = "always";
+            InitialKeyRepeat = 25;
+            KeyRepeat = 5;
+            PMPrintingExpandedStateForPrint = true;
+            PMPrintingExpandedStateForPrint2 = true;
+            "com.apple.trackpad.scaling" = 0.875;
+          };
+          ".GlobalPreferences"."com.apple.mouse.scaling" = 0.875;
 
           dock = {
             autohide = true;
             autohide-delay = 0.0;
-            orientation = "bottom";
-            tilesize = 65;
-            show-recents = false;
-            mru-spaces = false;
             expose-group-by-app = true;
             mineffect = "genie";
+            minimize-to-application = true;
+            mru-spaces = false;
+            orientation = "bottom";
+            show-recents = false;
+            tilesize = 65;
           };
+
+          finder = {
+            AppleShowAllExtensions = true;
+            CreateDesktop = true;
+            FXPreferredViewStyle = "clmv";
+            FXDefaultSearchScope = "SCcf";
+            FXEnableExtensionChangeWarning = false;
+            _FXShowPosixPathInTitle = true;
+            QuitMenuItem = true;
+            ShowPathbar = true;
+            ShowStatusBar = true;
+          };
+
+          menuExtraClock.IsAnalog = true;
 
           spaces = {
             spans-displays = false;
@@ -207,27 +254,20 @@
             type = "png";
           };
 
-          finder = {
-            AppleShowAllExtensions = true;
-            QuitMenuItem = true;
-            ShowPathbar = true;
-            ShowStatusBar = true;
-            CreateDesktop = true;
-            FXPreferredViewStyle = "clmv";
-            FXDefaultSearchScope = "SCcf";
-            FXEnableExtensionChangeWarning = false;
-            _FXShowPosixPathInTitle = true;
-          };
-
           trackpad = {
             Clicking = true;
             FirstClickThreshold = 2;
           };
+
+          # CustomSystemPreferences = {};
+          # CustomUserPreferences = {};
         };
       };
 
       services = {
         nix-daemon.enable = true;
+        # synergy.package = pkgs.barrier;
+        # synergy.server.enable = true;
       };
 
       system = {
