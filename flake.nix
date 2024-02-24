@@ -82,6 +82,8 @@
           vscodium
         ];
 
+        loginShell = "/run/current-system/sw/bin/nu";
+
         variables = {
           EDITOR = "nvim";
           VISUAL = "codium";
