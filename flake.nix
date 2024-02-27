@@ -61,6 +61,7 @@
           imagemagick
           inetutils
           neovim
+          nixpkgs-fmt
           nmap
           scrcpy
           wget
@@ -94,7 +95,6 @@
           iterm2
           net-news-wire
           openscad
-          utm
           vscodium
         ];
 
@@ -105,8 +105,7 @@
       };
 
       programs = {
-        # Create /etc/zshrc that loads the nix-darwin environment.
-        zsh.enable = true; # default shell on macOS 14 Sonoma
+        zsh.enable = true;
         fish.enable = true;
       };
 
@@ -152,6 +151,7 @@
           "toontown-rewritten"
           "transmission" # broken package on NixPkgs, no app shortcut generated
           "ultimaker-cura" # Linux only on NixPkgs
+          "utm" # package on NixPkgs available but has broken Container scheme
         ];
 
         masApps = {
