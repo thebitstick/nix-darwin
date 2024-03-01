@@ -15,8 +15,12 @@
       "Jorges-Laptop-Pro" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          home-manager.darwinModules.home-manager
           ./configuration.nix
+          home-manager.darwinModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.thebitstick = import ./home.nix;
+          }
         ];
       };
     };

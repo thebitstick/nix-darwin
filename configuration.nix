@@ -1,33 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
-  nixpkgs = {
-    hostPlatform = "aarch64-darwin";
-
-    config = {
-      allowUnfree = true;
-    };
-  };
-
-  nix = {
-    settings = {
-      experimental-features = "nix-command flakes repl-flake";
-      extra-platforms = [
-        "aarch64-darwin"
-        "x86_64-darwin"
-      ];
-    };
-
-    gc = {
-      automatic = true;
-      interval.Day = 7;
-      options = "--delete-older-than 7d";
-    };
-    package = pkgs.nix;
-  };
-
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
+
+  users.users.thebitstick = {
+    home = "/Users/thebitstick";
+  };
 
   networking = {
     computerName = "Jorge’s Laptop Pro";
@@ -250,18 +229,33 @@
         Clicking = true;
         FirstClickThreshold = 2;
       };
-
-      # CustomSystemPreferences = {};
-      # CustomUserPreferences = {};
     };
   };
 
-  services = {
-    nix-daemon.enable = true;
-    # synergy.package = pkgs.barrier;
-    # synergy.server.enable = true;
+  nixpkgs = {
+    hostPlatform = "aarch64-darwin";
+    config = {
+      allowUnfree = true;
+    };
   };
 
+  nix = {
+    settings = {
+      experimental-features = "nix-command flakes repl-flake";
+      extra-platforms = [
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
+    };
+    gc = {
+      automatic = true;
+      interval.Day = 7;
+      options = "--delete-older-than 7d";
+    };
+    package = pkgs.nix;
+  };
+  
+  services.nix-daemon.enable = true;
   system = {
     stateVersion = 4;
   };
