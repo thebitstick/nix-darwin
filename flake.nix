@@ -1,5 +1,5 @@
 {
-  description = "Mac Configuration for Jorge's Laptop Pro";
+  description = "Base configuration for Jorge's Laptop Pro";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -10,7 +10,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, darwin }: {
+  outputs = { self, nixpkgs, home-manager, darwin, ... }: {
     darwinConfigurations = {
       "Jorges-Laptop-Pro" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
