@@ -23,17 +23,10 @@
   environment = {
     systemPackages = with pkgs; [
       # Terminal Utilities
-      android-tools
-      fastfetch
-      ffmpeg
-      imagemagick
       inetutils
       neovim
-      nixpkgs-fmt
       nmap
-      scrcpy
       wget
-      yt-dlp
 
       # Terminal Replacement Utilities
       bat
@@ -41,12 +34,6 @@
       duf
       eza
       fd
-
-      # Programming Languages
-      bun
-      cargo
-      crystal
-      nushell
     ];
 
     variables = {
