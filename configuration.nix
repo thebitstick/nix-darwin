@@ -7,7 +7,8 @@
 
   networking = {
     hostName = "Jorges-Laptop-Pro";
-    dns = [ # Cloudflare DNS
+    dns = [
+      # Cloudflare DNS
       "1.1.1.1"
       "1.0.0.1"
       "2606:4700:4700::1111"
@@ -53,7 +54,7 @@
       interval.Day = 7;
       options = "--delete-older-than 7d";
     };
-    settings.experimental-features = "nix-command flakes repl-flake";
+    settings.experimental-features = [ "nix-command" "flakes" ];
     package = pkgs.nix;
   };
   system.stateVersion = 4;

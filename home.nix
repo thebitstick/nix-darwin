@@ -6,7 +6,6 @@
     android-tools
     fastfetch
     ffmpeg
-    git
     imagemagick
     nixpkgs-fmt
     scrcpy
@@ -19,6 +18,12 @@
     nushell
     rustc
   ];
+
+  programs.git = {
+    enable = true;
+    userName = "TheBitStick";
+    userEmail = "the@bitstick.rip";
+  };
 
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
