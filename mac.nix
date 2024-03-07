@@ -12,6 +12,8 @@
 
   environment = {
     systemPackages = with pkgs; [
+      fish
+
       # macOS Background Apps
       alt-tab-macos
       apparency
@@ -63,6 +65,7 @@
       "prismlauncher" # broken package on NixPkgs, wayland dependency required
       "qlmarkdown"
       "raycast" # regular self-updates means NixPkgs cannot be used
+      "reminders-menubar"
       "rewind"
       "sensei"
       "sidequest" # Linux only on NixPkgs
@@ -93,7 +96,6 @@
       "Speedtest" = 1153157709;
       "WaterMinder" = 1415257369;
       "Mini Metro" = 1047760200;
-      "Shell Fish" = 1336634154;
       "Plash" = 1494023538;
       "VIGIL Client Lite" = 1387350823;
       "MusicBox" = 1614730313;
