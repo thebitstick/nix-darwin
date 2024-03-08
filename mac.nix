@@ -13,23 +13,6 @@
   environment = {
     systemPackages = with pkgs; [
       fish
-
-      # macOS Background Apps
-      alt-tab-macos
-      apparency
-      keka
-      mountain-duck
-      swiftbar
-
-      # macOS Graphical Apps
-      audacity
-      discord
-      grandperspective
-      iina
-      iterm2
-      net-news-wire
-      openscad
-      vscodium
     ];
   };
 
