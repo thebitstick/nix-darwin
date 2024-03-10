@@ -21,22 +21,31 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     casks = [
+      # macOS Background Apps
       "altserver" # Linux only on NixPkgs
-      "arc"
-      "arduino-ide" # Linux only on NixPkgs
       "bartender" # v5 is not available yet on NixPkgs
       "choosy"
       "cleanshot"
-      "clone-hero" # Linux only on NixPkgs
       "deepl"
-      "firefox" # Linux only on NixPkgs
       "itsycal"
-      "keyboardcleantool"
       "linearmouse"
-      "lm-studio"
-      "macpass"
       "macs-fan-control"
       "microsoft-auto-update"
+      "ollama" # package on NixPkgs but app not available
+      "qlmarkdown"
+      "raycast" # regular self-updates means NixPkgs cannot be used
+      "reminders-menubar"
+      "rewind"
+      "syntax-highlight"
+      "tailscale" # package on NixPkgs but app not available
+
+      # macOS Graphical Apps
+      "arc"
+      "arduino-ide" # Linux only on NixPkgs
+      "clone-hero" # Linux only on NixPkgs
+      "firefox" # Linux only on NixPkgs
+      "keyboardcleantool"
+      "macpass"
       "microsoft-excel"
       "microsoft-outlook"
       "microsoft-powerpoint"
@@ -46,14 +55,8 @@
       "obs" # Linux only on NixPkgs
       "obsidian" # Linux only on NixPkgs
       "prismlauncher" # broken package on NixPkgs, wayland dependency required
-      "qlmarkdown"
-      "raycast" # regular self-updates means NixPkgs cannot be used
-      "reminders-menubar"
-      "rewind"
       "sensei"
       "sidequest" # Linux only on NixPkgs
-      "syntax-highlight"
-      "tailscale" # package on NixPkgs but app not available
       "tetrio" # Linux only on NixPkgs
       "toontown-rewritten"
       "transmission" # broken package on NixPkgs, no app shortcut generated
