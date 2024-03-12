@@ -24,6 +24,9 @@
     };
     neovim = {
       enable = true;
+      viAlias = true;
+      vimAlias = true;
+      defaultEditor = true;
     };
     nushell = {
       enable = true;
@@ -62,11 +65,11 @@
       }
       '';
       shellAliases = {
+        open = "^open";
         cat = "bat --plain --paging=never";
         editv = "zed";
         sedit = "sudo nvim";
         edit = "nvim";
-        vim = "nvim";
       };
     };
   };

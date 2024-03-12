@@ -37,11 +37,6 @@
       eza
       fd
     ];
-
-    variables = {
-      EDITOR = "nvim";
-      VISUAL = "zed";
-    };
   };
 
   nixpkgs = {
