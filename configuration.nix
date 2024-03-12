@@ -40,7 +40,7 @@
 
     variables = {
       EDITOR = "nvim";
-      VISUAL = "codium";
+      VISUAL = "zed";
     };
   };
 

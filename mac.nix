@@ -21,29 +21,41 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     casks = [
-      # macOS Background Apps
-      "altserver" # Linux only on NixPkgs
-      "bartender" # v5 is not available yet on NixPkgs
+      # macOS Background Apps (always-on)
+      "altserver"
+      "alt-tab"
+      "bartender"
       "choosy"
       "cleanshot"
       "deepl"
+      # "immersed" # not on Homebrew yet
       "itsycal"
       "linearmouse"
-      "macs-fan-control"
-      "microsoft-auto-update"
-      "ollama" # package on NixPkgs but app not available
-      "qlmarkdown"
-      "raycast" # regular self-updates means NixPkgs cannot be used
+      "ollama"
+      "raycast"
       "reminders-menubar"
       "rewind"
+      "swiftbar"
+      "tailscale"
+
+      # macOS Background Apps
+      "apparency"
+      "keka"
+      "microsoft-auto-update"
+      "mountain-duck"
+      "qlmarkdown"
       "syntax-highlight"
-      "tailscale" # package on NixPkgs but app not available
 
       # macOS Graphical Apps
       "arc"
-      "arduino-ide" # Linux only on NixPkgs
-      "clone-hero" # Linux only on NixPkgs
-      "firefox" # Linux only on NixPkgs
+      "arduino-ide"
+      "audacity"
+      "clone-hero"
+      "discord"
+      "firefox"
+      "grandperspective"
+      "iina"
+      "iterm2"
       "keyboardcleantool"
       "macpass"
       "microsoft-excel"
@@ -52,16 +64,18 @@
       "microsoft-remote-desktop"
       "microsoft-word"
       "mochi-diffusion"
-      "obs" # Linux only on NixPkgs
-      "obsidian" # Linux only on NixPkgs
-      "prismlauncher" # broken package on NixPkgs, wayland dependency required
+      "netnewswire"
+      "obs"
+      "obsidian"
+      "openscad"
+      "prismlauncher"
       "sensei"
-      "sidequest" # Linux only on NixPkgs
-      "tetrio" # Linux only on NixPkgs
+      "sidequest"
+      "tetrio"
       "toontown-rewritten"
-      "transmission" # broken package on NixPkgs, no app shortcut generated
-      "ultimaker-cura" # Linux only on NixPkgs
-      "utm" # package on NixPkgs available but has broken Container scheme
+      "transmission"
+      "ultimaker-cura"
+      "utm"
       "zed"
     ];
 
@@ -78,15 +92,17 @@
       "Disk Speed Test" = 425264550;
       "PCalc" = 403504866;
       "DaVinci Resolve" = 571213070;
-      "OneDrive" = 823766827;
       "Canva" = 897446215;
       "Speedtest" = 1153157709;
-      "WaterMinder" = 1415257369;
       "Mini Metro" = 1047760200;
       "Plash" = 1494023538;
       "VIGIL Client Lite" = 1387350823;
       "MusicBox" = 1614730313;
       "Steam Link" = 1246969117;
+
+      # Background Apps
+      "OneDrive" = 823766827;
+      "WaterMinder" = 1415257369;
 
       # Safari Extensions
       "StreetPass for Mastodon" = 6446224821;
@@ -100,10 +116,6 @@
       "AdGuard for Safari" = 1440147259;
       "Baking Soda" = 1601151613;
     };
-
-    # non-Homebrew, non-App Store, non-NixPkg apps
-    # Immersed
-    # Sirsi WorkFlows
   };
 
   security = {
