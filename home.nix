@@ -12,9 +12,7 @@
     yt-dlp
 
     # Programming Languages
-    bun
     cargo
-    crystal
     nushell
     rustc
 

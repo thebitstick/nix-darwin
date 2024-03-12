@@ -62,6 +62,7 @@
       "transmission" # broken package on NixPkgs, no app shortcut generated
       "ultimaker-cura" # Linux only on NixPkgs
       "utm" # package on NixPkgs available but has broken Container scheme
+      "zed"
     ];
 
     masApps = {
